@@ -56,8 +56,9 @@ class Car:
     def get_car_count(self):
         return self.__car_count
 
-    def get_time(self):
-        return time.time()
+    @staticmethod
+    def get_time():
+        return datetime.datetime.now().strftime("%H:%M:%S")
 
     def __repr__(self):
         return f"Car(brand='{self.brand}', model='{self.model}')"
@@ -74,12 +75,13 @@ car2 = Car.from_string("Toyota-Corolla")
 # print(Car.__car_count)
 # print(car1.get_car_count) # проперти выхываются без круглых скобок
 
-
+print(Car.get_time())
 my_time = car1.get_time()  # Обращение к статичному методу
 # print(my_time)
 
 # Контекстный менеджер
-with open("example.txt", "w") as my_file: # Открываем файл и закрываем его после выхода из блока with ("w" это права для записи и чтения)
+with open("example.txt",
+          "w") as my_file:  # Открываем файл и закрываем его после выхода из блока with ("w" это права для записи и чтения)
     my_file.write("Записали какие-то строки в наш тестовый файл")
 # Если файла нет то он будет создан и запишет необходимые строки, а есои файл есть, то он перезапишет содержимое на нашу строку
 
