@@ -1,0 +1,27 @@
+# Python venv
+
+python -m venv .venv  # создает виртуальное окружение (for linux & macOS pithon3)
+
+Активация окружения
+# Windows (PowerShell)
+venv\Scripts\Activate
+# Windows (cmd)
+venv\Scripts\activate
+# macOS / Linux
+source venv/bin/activate
+
+Установка зависимостей
+pip install <package name>
+
+Сохранение зависимостей
+pip freeze > requirements.txt
+
+Установка зависимостей из файла
+pip install -r requirements.txt
+
+Деактивация окружения
+deactivate
+
+Удаление окружения
+rm -rf venv               # macOS / Linux
+rmdir /s venv             # Windows
